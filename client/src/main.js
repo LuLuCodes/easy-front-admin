@@ -4,6 +4,7 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import 'iview/dist/styles/iview.css';
+import './assets/css/my.less';
 
 Vue.config.productionTip = false;
 
