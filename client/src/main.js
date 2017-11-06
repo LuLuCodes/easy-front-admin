@@ -9,11 +9,13 @@ import './assets/css/my.less';
 
 // v-focus directive
 import focus from './directive/focus';
+import vueWechatTitle from 'vue-wechat-title';
 
 Vue.config.productionTip = false;
 
 Vue.use(iView);
 Vue.use(focus);
+Vue.use(vueWechatTitle);
 
 /* eslint-disable no-new */
 new Vue({
