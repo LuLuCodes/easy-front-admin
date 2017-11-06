@@ -7,20 +7,20 @@
           <img src="../assets/images/login.png" alt="">
         </div>
         <div class="login-form pull-right flexbox">
-          <Form ref="formInline" :rules="ruleInline" >
+          <Form ref="formLogin" :rules="ruleLogin" >
             <FormItem prop="user">
-              <Input type="text" v-model="formInline.user" placeholder="账号">
-              <Icon class="icon icon-user" slot="prepend"></Icon>
+              <Input type="text" v-model="formLogin.user" placeholder="账号">
+                <Icon class="icon icon-user" slot="prepend"></Icon>
               </Input>
             </FormItem>
             <FormItem prop="password">
-              <Input type="password" v-model="formInline.password" placeholder="密码">
-              <Icon class="icon icon-password" slot="prepend"></Icon>
+              <Input type="password" v-model="formLogin.password" placeholder="密码">
+                <Icon class="icon icon-password" slot="prepend"></Icon>
               </Input>
             </FormItem>
             <Checkbox v-model="checked">记住密码</Checkbox>
             <FormItem>
-              <Button type="primary" @click="handleSubmit('formInline')" size="large" long>登录</Button>
+              <Button type="primary" @click="handleSubmit('formLogin')" size="large" long>登录</Button>
             </FormItem>
           </Form>
         </div>
@@ -35,11 +35,11 @@
     data () {
       return {
         checked: true,
-        formInline: {
+        formLogin: {
           user: '',
           password: ''
         },
-        ruleInline: {
+        ruleLogin: {
           user: [
             { required: true, message: '请填写用户名', trigger: 'blur' }
           ],
@@ -55,8 +55,6 @@
         this.$refs[name].validate((valid) => {
           if (valid) {
             this.$Message.success('提交成功!');
-          } else {
-            this.$Message.error('表单验证失败!');
           }
         });
       }
