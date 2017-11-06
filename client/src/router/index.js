@@ -14,8 +14,8 @@ export default new Router({
       path: '/login',
       name: 'login',
       component(resolve) {
-        require.ensure(['../views/Login.vue'], () => {
-          resolve(require('../views/Login.vue'));
+        require.ensure(['../pages/Login.vue'], () => {
+          resolve(require('../pages/Login.vue'));
         });
       },
       meta: {requiresAuth: false, title: '登录'}
