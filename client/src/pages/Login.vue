@@ -59,6 +59,9 @@
               return;
             }
             this.entrying = true;
+            setTimeout(() => {
+              this.$router.push({path: '/home'});
+            }, 1500);
           }
         });
       }
