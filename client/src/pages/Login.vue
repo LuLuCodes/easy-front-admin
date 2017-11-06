@@ -9,7 +9,7 @@
         <div class="login-form pull-right flexbox">
           <Form ref="formLogin" :rules="ruleLogin" >
             <FormItem prop="user">
-              <Input type="text" v-model="formLogin.user" placeholder="账号">
+              <Input type="text" v-model="formLogin.user" placeholder="账号" autofocus>
                 <Icon class="icon icon-user" slot="prepend"></Icon>
               </Input>
             </FormItem>

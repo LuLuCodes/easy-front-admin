@@ -7,9 +7,13 @@ import iView from 'iview';
 import 'iview/dist/styles/iview.css';
 import './assets/css/my.less';
 
+// v-focus directive
+import focus from './directive/focus';
+
 Vue.config.productionTip = false;
 
 Vue.use(iView);
+Vue.use(focus);
 
 /* eslint-disable no-new */
 new Vue({
