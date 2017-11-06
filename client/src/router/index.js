@@ -33,7 +33,11 @@ export default new Router({
     {
       path: '/401',
       name: 'error_401',
-      component: resolve => { require(['../views/error_page/401.vue'], resolve); },
+      component(resolve) {
+        require.ensure(['../pages/ErrorPage/401.vue'], () => {
+          resolve(require('../pages/ErrorPage/401.vue'));
+        });
+      },
       meta: {
         title: '401-权限不足'
       }
@@ -41,7 +45,11 @@ export default new Router({
     {
       path: '/500',
       name: 'error_500',
-      component: resolve => { require(['../views/error_page/500.vue'], resolve); },
+      component(resolve) {
+        require.ensure(['../pages/ErrorPage/500.vue'], () => {
+          resolve(require('../pages/ErrorPage/500.vue'));
+        });
+      },
       meta: {
         title: '500-服务端错误'
       }
@@ -49,8 +57,8 @@ export default new Router({
     {
       path: '*',
       component(resolve) {
-        require.ensure(['../views/error_page/404.vue'], () => {
-          resolve(require('../views/error_page/404.vue'));
+        require.ensure(['../pages/ErrorPage/404.vue'], () => {
+          resolve(require('../pages/ErrorPage/404.vue'));
         });
       },
       meta: {
