@@ -1,5 +1,5 @@
 <template>
-  <div class="nav-wrap">
+  <div class="nav-wrap" :style="{width: hideMenuText?'60px':'200px', overflow: hideMenuText ? 'visible' : 'auto'}">
     <Menu ref="sideBarMenu" :theme="menuTheme" :active-name="$route.name">
       <template v-for="menu in routers.children">
         <MenuItem v-if="menu.children.length <= 1" :name="menu.name" :key="menu.path">
@@ -22,12 +22,13 @@
     },
     props: {
       routers: {
-        type: Array,
+        type: Object,
         default() {
-          return [];
+          return {};
         }
       },
-      iconSize: Number
+      iconSize: Number,
+      hideMenuText: Boolean
     },
     computed: {
       ...mapState({

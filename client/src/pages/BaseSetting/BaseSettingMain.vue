@@ -1,7 +1,7 @@
 <template>
   <div class="page">
-    <module-header title="基础设置" title-desc="Base Setting"></module-header>
-    <side-bar-menu :routers="routers" :iconSize="14"></side-bar-menu>
+    <module-header title="基础设置" title-desc="Base Setting" :hide-menu-text="hideMenuText" @hideMenu="hideMenu"></module-header>
+    <side-bar-menu :routers="routers" :iconSize="14" :hide-menu-text="hideMenuText"></side-bar-menu>
   </div>
 </template>
 
@@ -16,7 +16,9 @@
       SideBarMenu
     },
     data() {
-      return {};
+      return {
+        hideMenuText: false
+      };
     },
     props: {},
     computed: {
@@ -27,7 +29,11 @@
     created() {
     },
     filters: {},
-    methods: {}
+    methods: {
+      hideMenu(show) {
+        this.hideMenuText = show;
+      }
+    }
   };
 </script>
 

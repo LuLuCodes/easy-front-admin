@@ -6,7 +6,7 @@
       <span>{{title}}</span>
       <span>{{titleDesc}}</span>
     </p>
-    <Button :style="{transform: 'rotateZ(' + (this.hideMenuText ? '-90' : '0') + 'deg)'}" type="text"
+    <Button :style="{transform: 'rotateZ(' + (this.isHideMenuText ? '-90' : '0') + 'deg)'}" type="text"
             @click="toggleClick">
       <Icon type="navicon" size="32"></Icon>
     </Button>
@@ -24,7 +24,7 @@
     },
     data() {
       return {
-        hideMenuText: false
+        isHideMenuText: false
       };
     },
     props: {
@@ -39,16 +39,25 @@
       link: {
         type: String,
         default: '/'
+      },
+      hideMenuText: {
+        type: Boolean,
+        default: false
       }
     },
     computed: {},
     created() {
     },
+    watch: {
+      hideMenuText(show) {
+        this.isHideMenuText = show;
+      }
+    },
     filters: {},
     methods: {
       toggleClick() {
-        this.hideMenuText = !this.hideMenuText;
-        this.$emit('hideMenuText', this.hideMenuText);
+        this.isHideMenuText = !this.isHideMenuText;
+        this.$emit('hideMenu', this.isHideMenuText);
       }
     }
   };
