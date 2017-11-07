@@ -1,14 +1,12 @@
 <template>
-  <div class="nav-wrap" :style="{width: hideMenuText?'60px':'200px', overflow: hideMenuText ? 'visible' : 'auto'}">
-    <Menu ref="sideBarMenu" :theme="menuTheme" :active-name="$route.name">
-      <template v-for="menu in routers.children">
-        <MenuItem v-if="menu.children.length <= 1" :name="menu.name" :key="menu.path">
-          <i class="icon" :class="menu.icon" :key="menu.path" :size="iconSize"></i>
-          {{ menu.title }}
-        </MenuItem>
-      </template>
-    </Menu>
-  </div>
+  <Menu ref="sideBarMenu" :theme="menuTheme" :active-name="$route.name">
+    <template v-for="menu in routers.children">
+      <MenuItem v-if="menu.children.length <= 1" :name="menu.name" :key="menu.path">
+        <i class="icon" :class="menu.icon" :key="menu.path" :size="iconSize"></i>
+        {{ menu.title }}
+      </MenuItem>
+    </template>
+  </Menu>
 </template>
 
 <script>
@@ -27,8 +25,7 @@
           return {};
         }
       },
-      iconSize: Number,
-      hideMenuText: Boolean
+      iconSize: Number
     },
     computed: {
       ...mapState({

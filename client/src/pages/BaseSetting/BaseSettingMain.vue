@@ -1,7 +1,11 @@
 <template>
   <div class="page">
     <module-header title="基础设置" title-desc="Base Setting" :hide-menu-text="hideMenuText" @hideMenu="hideMenu"></module-header>
-    <side-bar-menu :routers="routers" :iconSize="14" :hide-menu-text="hideMenuText"></side-bar-menu>
+    <div class="nav-wrap" :style="{width: hideMenuText?'60px':'200px', overflow: hideMenuText ? 'visible' : 'auto'}">
+      <side-bar-menu v-if="!hideMenuText" :routers="routers" :iconSize="20"></side-bar-menu>
+      <side-bar-menu-shrink v-else :routers="routers" :iconSize="20"></side-bar-menu-shrink>
+    </div>
+    
   </div>
 </template>
 
@@ -9,11 +13,13 @@
   import {mapState} from 'vuex';
   import ModuleHeader from '../../components/ModuleHeader.vue';
   import SideBarMenu from '../../components/SideBarMenu.vue';
+  import SideBarMenuShrink from '../../components/SideBarMenuShrink.vue';
   export default {
     name: '',
     components: {
       ModuleHeader,
-      SideBarMenu
+      SideBarMenu,
+      SideBarMenuShrink
     },
     data() {
       return {
