@@ -1,13 +1,23 @@
+import BaseSettingMain from '../pages/BaseSetting/BaseSettingMain.vue';
+
 const routers = [
   {
     path: '/base-setting',
+    component: BaseSettingMain,
+    redirect: '/base-setting/carousels-list',
     name: 'base-setting',
-    component(resolve) {
-      require.ensure(['../views/setting-banner.vue'], () => {
-        resolve(require('../views/setting-banner.vue'));
-      });
-    },
-    meta: {requiresAuth: false, title: '官网设置-轮播图设置'}
+    children: [
+      {
+        path: 'carousels-list',
+        component(resolve) {
+          require.ensure(['../pages/BaseSetting/CarouselsList.vue'], () => {
+            resolve(require('../pages/BaseSetting/CarouselsList.vue'));
+          });
+        },
+        name: 'carousels-list',
+        meta: {requiresAuth: false, title: '轮播图管理'}
+      }
+    ]
   }
 ];
 

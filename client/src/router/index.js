@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import BaseSetting from './base-setting';
 
 Vue.use(Router);
 
@@ -54,6 +55,7 @@ export default new Router({
         title: '500-服务端错误'
       }
     },
+    ...BaseSetting,
     {
       path: '*',
       component(resolve) {

@@ -26,7 +26,7 @@
             menuDesc: 'Base Setting',
             menuTitle: '基础设置',
             menuAction: '进入模块',
-            menuLink: '',
+            menuLink: '/base-setting',
             menuClass: 'home-list-setting'
           },
           {
