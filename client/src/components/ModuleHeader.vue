@@ -10,9 +10,12 @@
 </template>
 
 <script>
+  import HeaderRight from './HeaderRight.vue';
   export default {
     name: 'module-header',
-    components: {},
+    components: {
+      HeaderRight
+    },
     data() {
       return {};
     },

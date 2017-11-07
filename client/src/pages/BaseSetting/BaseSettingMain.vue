@@ -1,10 +1,16 @@
 <template>
+  <div class="page">
+    <module-header title="基础设置" title-desc="Base Setting"></module-header>
+  </div>
 </template>
 
 <script>
+  import ModuleHeader from '../../components/ModuleHeader.vue';
   export default {
     name: '',
-    components: {},
+    components: {
+      ModuleHeader
+    },
     data() {
       return {};
     },
