@@ -1,25 +1,29 @@
 <template>
   <header>
     <div class="w1110">
-      <a href="#" class="logo"><img src="../assets/images/logo.png" alt=""></a>
-      <div class="pull-right">
-        <span class="avatar"><img src="../assets/images/demo/avatar.jpg" alt=""></span>
-        <span>qian.qing@aliyun.com</span>
-        <a href="#" class="icon icon-setting"></a>
-        <a href="#" class="icon icon-quit"></a>
-      </div>
+      <router-link :to="link" class="logo"><img src="../assets/images/logo.png" alt=""></router-link>
+      <header-right></header-right>
     </div>
   </header>
 </template>
 
 <script>
+  import HeaderRight from './HeaderRight.vue';
+
   export default {
     name: 'main-header',
-    components: {},
+    components: {
+      HeaderRight
+    },
     data() {
       return {};
     },
-    props: {},
+    props: {
+      link: {
+        type: String,
+        default: '/'
+      }
+    },
     computed: {},
     created() {
     },
