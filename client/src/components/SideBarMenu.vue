@@ -2,7 +2,7 @@
   <Menu ref="sideBarMenu" :theme="menuTheme" :active-name="$route.name">
     <template v-for="menu in routers.children">
       <MenuItem v-if="menu.children.length <= 1" :name="menu.name" :key="menu.path">
-        <i class="icon" :class="menu.icon" :key="menu.path" :size="iconSize"></i>
+        <i class="icon" :class="menu.icon" :key="menu.path" :style="{fontSize: iconSize + 'px'}"></i>
         {{ menu.title }}
       </MenuItem>
     </template>
