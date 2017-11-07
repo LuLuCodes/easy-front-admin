@@ -1,9 +1,9 @@
 <template>
   <div class="nav-wrap">
     <Menu ref="sideBarMenu" :theme="menuTheme" :active-name="$route.name">
-      <template v-for="menu in menuList.children">
+      <template v-for="menu in routers.children">
         <MenuItem v-if="menu.children.length <= 1" :name="menu.name" :key="menu.path">
-          <Icon :type="menu.icon" :size="iconSize" :key="menu.path"></Icon>
+          <i class="icon" :class="menu.icon" :key="menu.path" :size="iconSize"></i>
           {{ menu.title }}
         </MenuItem>
       </template>
@@ -21,7 +21,7 @@
       return {};
     },
     props: {
-      menuList: {
+      routers: {
         type: Array,
         default() {
           return [];

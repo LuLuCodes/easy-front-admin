@@ -17,7 +17,8 @@ const routers = [
             resolve(require('../pages/BaseSetting/CarouselsList.vue'));
           });
         },
-        meta: {requiresAuth: false}
+        meta: {requiresAuth: false},
+        children: []
       }
     ]
   }
