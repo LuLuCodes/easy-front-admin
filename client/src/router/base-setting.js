@@ -11,6 +11,7 @@ const routers = [
         path: 'carousels-list',
         name: 'carousels-list',
         title: '轮播图管理',
+        icon: 'icon-banner',
         component(resolve) {
           require.ensure(['../pages/BaseSetting/CarouselsList.vue'], () => {
             resolve(require('../pages/BaseSetting/CarouselsList.vue'));
