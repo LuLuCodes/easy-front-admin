@@ -1,52 +1,13 @@
 <template>
   <ul class="home-list clearfix pull-left">
-    <li>
-      <a href="#" class="home-list-setting">
-        <span class="home-list-icon"></span>
-        <div class="home-list-enter">
-          <div class="home-list-title">
-            <h3 class="gray-text">Base Setting</h3>
-            <h4>基础设置</h4>
-          </div>
-          <p class="home-list-hover"><span>进入模块</span> <Icon type="ios-arrow-right"></Icon></p>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="home-list-crm">
-        <span class="home-list-icon"></span>
-        <div class="home-list-enter">
-          <div class="home-list-title">
-            <h3 class="gray-text">Customer Management</h3>
-            <h4>客户管理</h4>
-          </div>
-          <p class="home-list-hover"><span>进入模块</span> <Icon type="ios-arrow-right"></Icon></p>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="home-list-goods">
-        <span class="home-list-icon"></span>
-        <div class="home-list-enter">
-          <div class="home-list-title">
-            <h3 class="gray-text">Goods Management</h3>
-            <h4>商品管理</h4>
-          </div>
-          <p class="home-list-hover"><span>进入模块</span> <Icon type="ios-arrow-right"></Icon></p>
-        </div>
-      </a>
-    </li>
-    <li>
-      <a href="#" class="home-list-order">
-        <span class="home-list-icon"></span>
-        <div class="home-list-enter">
-          <div class="home-list-title">
-            <h3 class="gray-text">Order Management</h3>
-            <h4>订单管理</h4>
-          </div>
-          <p class="home-list-hover"><span>进入模块</span> <Icon type="ios-arrow-right"></Icon></p>
-        </div>
-      </a>
+    <li v-for="menu in menuList">
+      <home-module-menu
+        :menu-desc="menu.menuDesc"
+        :menu-title="menu.menuTitle"
+        :menu-action="menu.menuAction"
+        :menu-link="menu.menuLink"
+        :menu-class="menu.menuClass">
+      </home-module-menu>
     </li>
   </ul>
 </template>
@@ -59,7 +20,38 @@
       HomeModuleMenu
     },
     data() {
-      return {};
+      return {
+        menuList: [
+          {
+            menuDesc: 'Base Setting',
+            menuTitle: '基础设置',
+            menuAction: '进入模块',
+            menuLink: '',
+            menuClass: 'home-list-setting'
+          },
+          {
+            menuDesc: 'Customer Management',
+            menuTitle: '客户管理',
+            menuAction: '进入模块',
+            menuLink: '',
+            menuClass: 'home-list-crm'
+          },
+          {
+            menuDesc: 'Goods Management',
+            menuTitle: '商品管理',
+            menuAction: '进入模块',
+            menuLink: '',
+            menuClass: 'home-list-goods'
+          },
+          {
+            menuDesc: 'Order Management',
+            menuTitle: '订单管理',
+            menuAction: '进入模块',
+            menuLink: '',
+            menuClass: 'home-list-order'
+          }
+        ]
+      };
     },
     props: {},
     computed: {},
