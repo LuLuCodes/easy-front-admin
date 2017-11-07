@@ -5,7 +5,8 @@ const gobal = {
   state: {
     routers: {
       BaseSetting
-    }
+    },
+    menuTheme: 'dark'
   },
   mutations: { },
   actions: { },

@@ -1,6 +1,6 @@
 <template>
   <div class="nav-wrap">
-    <Menu :theme="theme2" active-name="1-2" :open-names="['1']">
+    <Menu :theme="menuTheme" active-name="1-2" :open-names="['1']">
       <Submenu name="1">
         <template slot="title">
           <Icon type="ios-paper"></Icon>
@@ -38,6 +38,8 @@
 </template>
 
 <script>
+  import {mapState} from 'vuex';
+  
   export default {
     name: '',
     components: {},
@@ -45,7 +47,11 @@
       return {};
     },
     props: {},
-    computed: {},
+    computed: {
+      ...mapState({
+        menuTheme: state => state.gobal.menuTheme
+      })
+    },
     created() {
     },
     filters: {},

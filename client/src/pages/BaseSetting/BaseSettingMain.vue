@@ -6,6 +6,7 @@
 </template>
 
 <script>
+  import {mapState} from 'vuex';
   import ModuleHeader from '../../components/ModuleHeader.vue';
   import SideBarMenu from '../../components/SideBarMenu.vue';
   export default {
@@ -18,7 +19,11 @@
       return {};
     },
     props: {},
-    computed: {},
+    computed: {
+      ...mapState({
+        routers: state => state.gobal.routers.BaseSetting
+      })
+    },
     created() {
     },
     filters: {},
