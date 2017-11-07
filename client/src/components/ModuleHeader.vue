@@ -48,6 +48,7 @@
     methods: {
       toggleClick() {
         this.hideMenuText = !this.hideMenuText;
+        this.$emit('hideMenuText', this.hideMenuText);
       }
     }
   };
