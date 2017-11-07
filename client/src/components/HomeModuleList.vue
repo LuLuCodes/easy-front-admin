@@ -52,9 +52,12 @@
 </template>
 
 <script>
+  import HomeModuleMenu from './HomeModuleMenu.vue';
   export default {
-    name: '',
-    components: {},
+    name: 'home-module-list',
+    components: {
+      HomeModuleMenu
+    },
     data() {
       return {};
     },

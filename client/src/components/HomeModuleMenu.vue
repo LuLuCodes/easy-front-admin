@@ -13,7 +13,7 @@
 
 <script>
   export default {
-    name: '',
+    name: 'home-module-menu',
     components: {},
     data() {
       return {};
