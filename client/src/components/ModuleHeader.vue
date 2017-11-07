@@ -1,23 +1,31 @@
 <template>
   <header>
-    <router-link :to="link" href="#" class="logo pull-left"><img src="../assets/images/logo-header.png" alt=""></router-link>
+    <router-link :to="link" href="#" class="logo pull-left"><img src="../assets/images/logo-header.png" alt="">
+    </router-link>
     <p class="pull-left">
       <span>{{title}}</span>
       <span>{{titleDesc}}</span>
     </p>
+    <Button :style="{transform: 'rotateZ(' + (this.hideMenuText ? '-90' : '0') + 'deg)'}" type="text"
+            @click="toggleClick">
+      <Icon type="navicon" size="32"></Icon>
+    </Button>
     <header-right></header-right>
   </header>
 </template>
 
 <script>
   import HeaderRight from './HeaderRight.vue';
+
   export default {
     name: 'module-header',
     components: {
       HeaderRight
     },
     data() {
-      return {};
+      return {
+        hideMenuText: false
+      };
     },
     props: {
       title: {
@@ -37,7 +45,11 @@
     created() {
     },
     filters: {},
-    methods: {}
+    methods: {
+      toggleClick() {
+        this.hideMenuText = !this.hideMenuText;
+      }
+    }
   };
 </script>
 
