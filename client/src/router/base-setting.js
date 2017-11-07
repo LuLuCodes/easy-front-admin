@@ -9,13 +9,14 @@ const routers = [
     children: [
       {
         path: 'carousels-list',
+        name: 'carousels-list',
+        title: '轮播图管理',
         component(resolve) {
           require.ensure(['../pages/BaseSetting/CarouselsList.vue'], () => {
             resolve(require('../pages/BaseSetting/CarouselsList.vue'));
           });
         },
-        name: 'carousels-list',
-        meta: {requiresAuth: false, title: '轮播图管理'}
+        meta: {requiresAuth: false}
       }
     ]
   }
