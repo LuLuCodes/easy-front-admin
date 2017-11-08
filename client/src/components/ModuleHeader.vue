@@ -15,12 +15,14 @@
 </template>
 
 <script>
+  import BreadCrumb from './BreadCrumb.vue';
   import HeaderRight from './HeaderRight.vue';
 
   export default {
     name: 'module-header',
     components: {
-      HeaderRight
+      HeaderRight,
+      BreadCrumb
     },
     data() {
       return {
