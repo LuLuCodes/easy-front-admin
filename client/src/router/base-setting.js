@@ -7,6 +7,7 @@ const routers = [
     title: '官网配置',
     redirect: '/website-setting/carousels-list',
     name: 'website-setting',
+    icon: 'ivu-icon-ios-world',
     children: [
       {
         path: 'carousels-list',
