@@ -45,7 +45,10 @@
           return {};
         }
       },
-      iconSize: Number
+      iconSize: {
+        type: Number,
+        default: 20
+      }
     },
     computed: {
       ...mapState({
