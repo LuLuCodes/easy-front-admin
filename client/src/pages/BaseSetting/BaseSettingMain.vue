@@ -29,7 +29,7 @@
     props: {},
     computed: {
       ...mapState({
-        routers: state => state.gobal.routers.BaseSetting[0],
+        routers: state => state.gobal.routers.BaseSetting,
         menuTheme: state => state.gobal.menuTheme
       })
     },

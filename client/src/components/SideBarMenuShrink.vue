@@ -1,6 +1,6 @@
 <template>
   <div>
-    <template v-for="(menu, index) in routers.children">
+    <template v-for="(menu, index) in routers">
       <Dropdown transfer v-if="menu.children.length !== 1" placement="right-start" :key="index">
         <Button style="width: 70px;margin-left: -5px;padding:10px 0;" type="text">
           <i class="icon" :class="menu.icon" :key="menu.path" :style="{fontSize: iconSize + 'px', color: iconColor}"></i>

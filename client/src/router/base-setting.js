@@ -2,10 +2,11 @@ import BaseSettingMain from '../pages/BaseSetting/BaseSettingMain.vue';
 
 const routers = [
   {
-    path: '/base-setting',
+    path: '/website-setting',
     component: BaseSettingMain,
-    redirect: '/base-setting/carousels-list',
-    name: 'base-setting',
+    title: '官网配置',
+    redirect: '/website-setting/carousels-list',
+    name: 'website-setting',
     children: [
       {
         path: 'carousels-list',
