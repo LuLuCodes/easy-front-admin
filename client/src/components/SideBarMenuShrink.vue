@@ -1,15 +1,15 @@
 <template>
   <div>
     <template v-for="(menu, index) in routers">
-      <Dropdown transfer v-if="menu.children.length !== 1" placement="right-start" :key="index">
+      <Dropdown transfer v-if="menu.children.length" placement="right-start" :key="index">
         <Button style="width: 70px;margin-left: -5px;padding:10px 0;" type="text">
           <e-icon :type="menu.icon" :size="iconSize" :color="iconColor"></e-icon>
         </Button>
         <DropdownMenu style="width: 200px;" slot="list">
           <template v-for="(child, i) in menu.children">
             <DropdownItem :name="child.name" :key="i">
-              <e-icon :type="child.icon" :size="iconSize" :color="iconColor"></e-icon>
-              {{ menu.title }}
+              <e-icon :type="child.icon" :size="iconSize"></e-icon>
+              {{ child.title }}
             </DropdownItem>
           </template>
         </DropdownMenu>
@@ -20,8 +20,8 @@
         </Button>
         <DropdownMenu style="width: 200px;" slot="list">
           <DropdownItem :name="menu.name" :key="'d' + index">
-            <e-icon :type="menu.icon" :size="iconSize" :color="iconColor"></e-icon>
-            {{ menu.title }}
+            <e-icon :type="menu.icon" :size="iconSize"></e-icon>
+            <span style="padding-left: 2px;">{{ menu.title }}</span>
           </DropdownItem>
         </DropdownMenu>
       </Dropdown>
@@ -50,7 +50,7 @@
       },
       iconSize: {
         type: Number,
-        default: 20
+        default: 14
       }
     },
     computed: {
