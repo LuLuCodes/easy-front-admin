@@ -13,7 +13,7 @@
         </template>
         <template v-for="child in menu.children">
           <MenuItem :name="child.name" :key="child.name">
-            <e-icon :type="menu.icon" :size="iconSize"></e-icon>
+            <e-icon :type="child.icon" :size="iconSize"></e-icon>
             {{ child.title }}
           </MenuItem>
         </template>
