@@ -1,5 +1,5 @@
 <template>
-  <Menu ref="sideBarMenu" :theme="menuTheme" :active-name="$route.name" width="auto">
+  <Menu ref="sideBarMenu" :theme="menuTheme" :active-name="$route.name" width="auto" :open-names="openedSubmenuArr">
     <template v-for="menu in routers">
       <MenuItem v-if="!menu.children.length" :name="menu.name" :key="menu.path">
         <e-icon :type="menu.icon" :size="iconSize"></e-icon>
@@ -48,7 +48,8 @@
     },
     computed: {
       ...mapState({
-        menuTheme: state => state.gobal.menuTheme
+        menuTheme: state => state.gobal.menuTheme,
+        openedSubmenuArr: state => state.gobal.openedSubmenuArr
       })
     },
     created() {
