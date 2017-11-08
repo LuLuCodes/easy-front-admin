@@ -3,12 +3,12 @@
     <template v-for="(menu, index) in routers">
       <Dropdown transfer v-if="menu.children.length !== 1" placement="right-start" :key="index">
         <Button style="width: 70px;margin-left: -5px;padding:10px 0;" type="text">
-          <i class="icon" :class="menu.icon" :key="menu.path" :style="{fontSize: iconSize + 'px', color: iconColor}"></i>
+          <e-icon :type="menu.icon" :size="iconSize" :color="iconColor"></e-icon>
         </Button>
         <DropdownMenu style="width: 200px;" slot="list">
           <template v-for="(child, i) in menu.children">
             <DropdownItem :name="child.name" :key="i">
-              <i class="icon" :class="menu.icon" :key="menu.path" :style="{fontSize: iconSize + 'px', color: iconColor}"></i>
+              <e-icon :type="child.icon" :size="iconSize" :color="iconColor"></e-icon>
               {{ menu.title }}
             </DropdownItem>
           </template>
@@ -16,11 +16,11 @@
       </Dropdown>
       <Dropdown transfer v-else placement="right-start" :key="index">
         <Button style="width: 70px;margin-left: -5px;padding:10px 0;" type="text">
-          <i class="icon" :class="menu.icon" :key="menu.path" :style="{fontSize: iconSize + 'px', color: iconColor}"></i>
+          <e-icon :type="menu.icon" :size="iconSize" :color="iconColor"></e-icon>
         </Button>
         <DropdownMenu style="width: 200px;" slot="list">
           <DropdownItem :name="menu.name" :key="'d' + index">
-            <i class="icon" :class="menu.icon" :key="menu.path" :style="{fontSize: iconSize + 'px', color: iconColor}"></i>
+            <e-icon :type="menu.icon" :size="iconSize" :color="iconColor"></e-icon>
             {{ menu.title }}
           </DropdownItem>
         </DropdownMenu>
@@ -31,10 +31,13 @@
 
 <script>
   import {mapState} from 'vuex';
-
+  import EIcon from './EIcon.vue';
+  
   export default {
     name: 'side-bar-menu-shrink',
-    components: {},
+    components: {
+      EIcon
+    },
     data() {
       return {};
     },

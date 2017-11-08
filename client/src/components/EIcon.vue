@@ -1,5 +1,5 @@
 <template>
-  <i :class="[baseClass, type]" :style="{fontSize: size + 'px'}"></i>
+  <i :class="[baseClass, type]" :style="{fontSize: size + 'px', color}"></i>
 </template>
 
 <script>
@@ -15,6 +15,10 @@
         default: 20
       },
       type: {
+        type: String,
+        default: ''
+      },
+      color: {
         type: String,
         default: ''
       }
